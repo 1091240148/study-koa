@@ -52,12 +52,14 @@
       };
 
     2.设置页面404
+    
       const main = ctx => {
         ctx.response.status = 404;
         ctx.response.body = 'Page Not Found';
       };
 
     3.中间件处理错误（try catch ）：
+    
       // demos/16.js
       const handler = async (ctx, next) => {
         try {
@@ -79,6 +81,7 @@
 
 
     4. error 事件的监听
+
       // demos/17.js
       const main = ctx => {
         ctx.throw(500);
@@ -95,6 +98,7 @@
 
   
   ·Cookis
+
     // demos/19.js
     const main = function(ctx) {
       const n = Number(ctx.cookies.get('view') || 0) + 1;
@@ -103,6 +107,7 @@
     }
 
   ·表单
+
     // demos/20.js
     const koaBody = require('koa-body');
 
@@ -116,6 +121,7 @@
 
 
   ·文件上传
+
     // demos/21.js
     const os = require('os');
     const path = require('path');
