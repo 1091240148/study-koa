@@ -24,9 +24,9 @@
 
 
   ·中间件：
+
     基本上，Koa 所有的功能都是通过中间件实现的。
     为一个方法，传入参数第一个是Context对象，第二个是next函数。//context函数放的是页面属性。*1
-
     在use中间件的时候会生成一个 先进后出 的栈结构，且只有当调用next函数之后才会执行下一个中间件。执行时当碰到没有使用next()函数的中间件时，就直接在当前中间件走“后出”的“回流”。
     当然还有异步的中间件处理方法：async+await。
     还有个“koa-compose”模块用于合并中间件。要注意的就算是合并也要执行next方法
@@ -46,13 +46,14 @@
 
 
   ·错误处理：
+
     1.输出程序错误
       const main = ctx => {
         ctx.throw(500);
       };
 
     2.设置页面404
-    
+
       const main = ctx => {
         ctx.response.status = 404;
         ctx.response.body = 'Page Not Found';
